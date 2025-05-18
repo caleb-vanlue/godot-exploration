@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if velocity.x:
+	if velocity.x && $AnimatedSprite2D.animation != 'run':
 		$AnimatedSprite2D.animation = 'run'
-	else:
+	elif (!velocity.x && $AnimatedSprite2D.animation != 'idle'):
 		$AnimatedSprite2D.animation = 'idle'
